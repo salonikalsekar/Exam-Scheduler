@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Input Form</title>
+    
+</head>
+
+<body>
+    <h2>Step 1 : Login Details</h2>
+    {{#if error}}
+    <div class="alert alert-danger">
+        <strong>{{error}}</strong> 
+    </div>
+    {{/if}}
+
+    
+    <form action = "/personalDetails" method = "post" id = "loginDetails" onload="onloadFn();">
+            <center>
+                <table>
+                    <tr>
+                        <td><label>Username</label></td>
+                        <td><input type="text" class="form-control" placeholder="Enter Name" name="unm" id="unm"></td>
+                    </tr>
+                     <tr>
+                        <td><label>Password</label></td>
+                        <td><input type="password" class="form-control" placeholder="Enter Password" name="pwd"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Confirm Password</label></td>
+                        <td><input type="password" class="form-control" placeholder="Confirm Password" name="conpwd"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Security Question</label></td>
+                        <td><select class="form-control" name="secq">
+                            <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                            <option value="What is your father's middle name?">What is your father's middle name?</option>
+                            <option value="What is the name of your first school?">What is the name of your first school?</option>
+                            <option value="Which is your favourite dish?">Which is your favourite dish?</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>Security Answer</label></td>
+                        <td><input type="text" class="form-control" placeholder="Security Answer" name="seca"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type = "submit" class = "btn btn-primary" id = "form1">Save And Continue</td>
+                    </tr>
+                </table><br><br>
+                
+            </center>
+    </form>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subject Details</title>
+    </head>
+
+
+    <body>
+
+            {{#if error}}
+    <div class="alert alert-danger">
+        <strong>{{error}}</strong> 
+    </div>
+    {{/if}}
+
+    
+        <h2>Step 3: Subject Info</h2>
+        <form action = "/home" method = "post" id = "subjectDetails">
+            <center>
+                <table>
+                    <tr>
+                        <td><label>Branch</label></td>
+                        <td>
+                            <select class = "form-control" name="branch">
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Management and Information Systems">Management and Information Systems</option>
+                                <option value="Computer Engineering">Computer Engineering</option>
+                                <option value="Business Intelligence and Analytics">Business Intelligence and Analytics</option>
+                                <option value="Finance Engineering">Finance Engineering</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td><label>Semester</label></td>
+                        <td>
+                            <select class = "form-control" name="semester">
+                                <option value="1st Semester">1st Semester</option>
+                                <option value="2nd Semester">2nd Semester</option>
+                                <option value="3rd Semester">3rd Semester</option>
+                                <option value="4th Semester">4th Semester</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Subject</label></td>
+                        <td>
+                            <select class = "form-control" name="subject" multiple = "multiple">
+                                <option value="CS546">Web Programming</option>
+                                <option value="CS561">Database Management Systems</option>
+                                <option value="CS570">Algorithms</option>
+                                <option value="CS545">Human Computer Interaction</option>
+                                <option value="CS547">Mobile Application Development</option>
+                                <option value="CS540">Distributed Systems and Cloud Computing</option>
+                                <option value="CS501">Principles of Programming Languages</option>
+                                <option value="CS590">Computer Organization and Architecture</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td><input type = "hidden" class = "form-control" name = "unm" value = {{unm}}></td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type = "submit" class = "btn btn-primary">Register</td>
+                    </tr>
+                </table><br><br>
+                
+            </center>
+    </form>
+       
+        
+
+        
+        
+    </body>
+</html>
+
+
+

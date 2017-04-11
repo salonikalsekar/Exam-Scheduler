@@ -1,0 +1,24 @@
+{
+  "name": "registration",
+  "version": "1.0.0",
+  "description": "a simple user registration app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shreyas sule",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "mongodb": "^2.2.12",
+    "node-uuid": "^1.4.7",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport-openid": "^0.4.0"
+  }
+}

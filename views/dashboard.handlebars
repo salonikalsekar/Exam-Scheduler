@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script>
+			$(document).ready(function(){
+				$('#myform').hide();
+				$('#web').on('click',function(){
+					$('#myform').show();
+				})
+			
+        
+			})
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      	<div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+       
+    </nav>
+
+		
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+            <div class="row">
+            {{#each sub}}
+                
+                   <div class="col-xs-6 col-sm-3 placeholder">
+                        
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                        <h4>{{name}}</h4>
+			                  <input type = "button" class = "btn btn-primary" value = "Add" name = "web" width = "50px" id = "web"></input>
+                        
+                    </div>
+              
+            {{/each}}
+            </div>
+          
+              
+          
+          
+
+		  <div id = "myform">
+			  <form action = "/dashboard2" method = "post" id = "event">
+			  		<center>
+                <table>
+                      <tr>
+                        <td><label>Type</label></td>
+                        <td>
+                          <select class = "form-control" name = "type" id = "type">
+                            <option value = "Assignments">Assignments</option>
+                            <option value = "Exam">Exam</option>
+                          </select>
+                        </td>
+                      </tr>
+				            	<tr>
+                        <td><label>Subject</label></td>
+                        <td>
+                            <select class = "form-control" name="subject">
+                                {{#each sub}}
+                                  <option value = {{name}}>{{name}}</option>
+                                {{/each}}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Start Date</label></td>
+                        <td><input type="date" class="form-control" placeholder="Enter Start Date" name="start" id="start"></td>
+                    </tr>
+                     <tr>
+                        <td><label>End Date</label></td>
+                        <td><input type="date" class="form-control" placeholder="Enter End Date" name="end" id = "end"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Time</label></td>
+                        <td><input type="time" name="usr_time" id = "usr_time"></td>
+                    </tr>
+					<tr>
+						<td></td>
+						<td><button type = "submit" class = "btn btn-primary" width = "100px" id = "add">Add Exam</button></td>
+					</tr>
+                    </table>
+			  </form>
+
+		  </div>
+          
+          
+          <div class="table-responsive" id = "dusra">
+			  <h2 class="sub-header">Scheduled Exams And Assignments</h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Subject</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Times</th>
+                </tr>
+              </thead>
+              {{#each myAssignment}}
+              <tbody>
+                <tr>
+                  <td>{{type}}</td>
+                  <td>{{subject}}</td>
+                  <td>{{start}}</td>
+                  <td>{{end}}</td>
+                  <td>{{time}}</td>
+                </tr>
+              </tbody>
+              {{/each}}
+              
+              
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	</body>
+</html>
